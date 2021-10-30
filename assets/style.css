@@ -2,6 +2,7 @@
     --primary-color: #657ed4;
     --text-color: #0d0106;
     --secondary-color: #3626a7;
+    --button-color: #fffcf2;
 }
 
 body {
@@ -13,7 +14,10 @@ body {
 header {
     font-size: 2em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: none;
+    padding: 0;
+
 }
 
 header a {
@@ -30,5 +34,23 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 50px 250px 50px 250px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.first-page-content {
+    font-size: 30px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--button-color);
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10%;
 }
