@@ -1,0 +1,34 @@
+:root {
+    --primary-color: #657ed4;
+    --text-color: #0d0106;
+    --secondary-color: #3626a7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+}
+
+header {
+    font-size: 2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+p.timer {
+    border: 1px solid black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
