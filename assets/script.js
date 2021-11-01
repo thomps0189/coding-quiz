@@ -45,4 +45,35 @@ let questionsArray = [
         answers: ['True', '13', '"hello"', 'null'],
         correctAnswer: ['"hello"']
     },
+    {
+        question: 'How do you declare a variable?',
+        answers: ['let', 'var', 'const', 'All of the above'],
+        correctAnswer: ['All of the above']
+    }
 ]
+
+let currentQuestionIndex = 0;
+
+function populateQuestion() {
+    let currentQuestion = questionsArray[currentQuestionIndex];
+
+    questionEl.textContent = currentQuestion.question;
+
+    answer1El.textContent = currentQuestion.answers[0]
+    answer2El.textContent = currentQuestion.answers[1]
+    answer3El.textContent = currentQuestion.answers[2]
+    answer4El.textContent = currentQuestion.answers[3]
+
+    answer1El.onclick = incrementQuestionIndex
+    answer1El.onclick = incrementQuestionIndex
+    answer1El.onclick = incrementQuestionIndex
+    answer1El.onclick = incrementQuestionIndex
+}
+
+// have question move to next one when an answer is clicked
+function incrementQuestionIndex() {
+    console.log(this)
+    let buttonElAnswer = this.innerText
+    console.log('buttonElAnswer: ', buttonElAnswer);
+    checkAnswer(buttonElAnswer)
+}
