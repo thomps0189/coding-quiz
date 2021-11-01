@@ -9,7 +9,7 @@
 </head>
 <body>
     <header><a href="#">View Highscores</p></a>
-        <nav class="timer">Timer</nav>
+        <nav class="timer"></nav>
     </header>
 
     
@@ -17,16 +17,26 @@
     <main class="welcome-container">
        <h1>Coding Quiz</h1>
        <p class="first-page-content">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p> 
-       <button>Start Quiz</button>
+       <button class="start-btn">Start Quiz</button>
     </main>
 
-    <div class="question-container">
-        <h1>What is Javascript?</h1>
-        <button>A Coding Language</button>
-        <button>Filler Answer</button>
-        <button>Third Answer</button>
-        <button>Fourth Answer</button>
+    <div hidden class="question-container">
+        <h1 class="question">What is Javascript?</h1>
+        <button id="answer1"></button>
+        <button id="answer2"></button>
+        <button id="answer3"></button>
+        <button id="answer4"></button>
+        <div id="right-wrong-container"></div>
     </div>
+
+    <section hidden class="score-container">
+        <h2>All done!</h2>
+        <p>Your final score is </p>
+        <span>Enter initials</span>
+        <input type="text">
+        <button>Submit</button>
+
+    </section>
     
     
    
