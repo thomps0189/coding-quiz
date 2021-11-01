@@ -4,6 +4,7 @@ let welcomeContainerEl = document.querySelector('.welcome-container');
 let questionContainerEl = document.querySelector('.quesetion-container');
 let rwContainerEl = document.getElementById('#right-wrong-contaienr');
 let scoreContainerEl = document.querySelector('.score-container');
+let finalScoreContainerEl = document.querySelector('.final-score');
 
 let time = 100;
 
@@ -76,4 +77,15 @@ function incrementQuestionIndex() {
     let buttonElAnswer = this.innerText
     console.log('buttonElAnswer: ', buttonElAnswer);
     checkAnswer(buttonElAnswer)
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex > questionsArray.length -1) {
+        console.log('Quiz Complete!')
+        questionContainerEl.classList.add('hidden')
+        scoreContainerEl.classList.remove('hidden')
+        finalScoreContainerEl.textContent = `${time +1}`
+        clearInterval(timerIntervalID)
+        return
+    }
 }
