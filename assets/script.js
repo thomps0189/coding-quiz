@@ -88,4 +88,35 @@ function incrementQuestionIndex() {
         clearInterval(timerIntervalID)
         return
     }
+    populateQuestion()
+}
+
+function populateTime() {
+    timeEl.textContent = `Time: ${time}`
+    time--
+    if (time < 0) {
+        time = 0;
+        questionContainerEl.classList.add('hidden')
+        scoreContainerEl.classList.remove('hidden')
+        finalScoreContainerEl.textContent = `Your final score is 0!`
+    }
+}
+
+function checkAnswer(answer) {
+    let tooltipText = ''
+    if (answer == questionsArray[currentQuestionIndex].correctAnswer) {
+        console.log('correct')
+        tooltipText = 'Correct!'
+        rwContainerEl.classList.remove('hidden')
+        tooltipEl.textContent = tooltipText
+    } else {
+        console.log('wrong')
+        tooltipText = 'Wrong!'
+        time = time -10
+        rwContainerEl.classList.remove('hidden')
+        tooltipEl.textContent = tooltipText
+    }
+    setTimeout(() => {
+        rwContainerEl.classList.add('hidden')
+    }, 1000);
 }
