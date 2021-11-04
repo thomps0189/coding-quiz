@@ -22,8 +22,6 @@ var finalScoreEl = document.getElementById('final-score')
 var timerIntervalID = null;
 
 
-
-
 function startQuiz() {
 	timerIntervalID = setInterval(populateTime, 1000);
 	welcomeContainerEl.classList.add('hidden')
@@ -49,7 +47,7 @@ var questionsArray = [
     {
         question: 'What is an example of a string value?',
         answers: ['True', '13', '"hello"', 'null'],
-        correctAnswer: 'hello'
+        correctAnswer: '"hello"'
     },
     {
         question: 'How do you declare a variable?',
