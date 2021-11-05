@@ -127,3 +127,9 @@ function checkAnswer(answer) {
 		rwContainerEl.classList.add('hidden')
 	}, 1000);
 }
+
+// local storage
+
+var highScores = localStorage.getItem(resultContainerEl)
+
+localStorage.setItem(resultContainerEl, finalScoreEl)
