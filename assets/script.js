@@ -5,7 +5,11 @@ var questionContainerEl = document.querySelector('.question-container')
 var resultContainerEl = document.querySelector('.result-container')
 var rwContainerEl = document.getElementById('right-wrong-container')
 var tooltipEl = document.getElementById('tooltip')
+var highScores = [];
 
+if (localStorage.getItem('highScores')){
+	highScores = JSON.parse(localStorage.getItem('highScores'));
+}
 
 var time = 100;
 
@@ -24,6 +28,8 @@ var timerIntervalID = null;
 
 function startQuiz() {
 	timerIntervalID = setInterval(populateTime, 1000);
+	// welcomeContainerEl.innerHTML = 'hi';
+	// console.log(welcomeContainerEl)
 	welcomeContainerEl.classList.add('hidden')
 	questionContainerEl.classList.remove("hidden")
 	populateQuestion()
@@ -130,6 +136,9 @@ function checkAnswer(answer) {
 
 // local storage
 
-var highScores = localStorage.getItem(resultContainerEl)
 
-localStorage.setItem(resultContainerEl, finalScoreEl)
+highScores.push({
+	name: 'bill',
+	score: 4
+})
+localStorage.setItem('highScores', JSON.stringify(highScores))
