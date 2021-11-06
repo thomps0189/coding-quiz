@@ -134,31 +134,23 @@ function checkAnswer(answer) {
 	}, 1000);
 }
 
-function endGame () {
-	resultContainerEl.classList.add('hidden')
-	endGamePage.classList.remove('hidden')
-	initialsWithScore.text = savedInitials;
-	document.getElementById('highscore-button').onclick = function () {
-		location.href = 
-	}
 
-}
 
 
 // local storage
 
 var initialsInput = document.querySelector('.initials');
-var highscoreButton = document.querySelector('.highscore-button')
+var highscoreButton = document.getElementById('highscore-button')
 var savedInitials = localStorage.getItem('hsinitials')
-
+var saveToLocalStorage = () => {
+	localStorage.setItem('hsinitials', initialsInput.textContent)
+}
 
 initialsInput.addEventListener('input', letter => {
 	initialsInput.textContent = letter.target.value
 })
 
-var saveToLocalStorage = () => {
-	localStorage.setItem('hsinitials', initialsInput.textContent)
-}
+
 
 
 
@@ -166,7 +158,8 @@ if(initialsInput) {
 	initialsInput.textContent = savedInitials
 }
 
-highscoreButton.addEventListener('click', saveToLocalStorage)
+highscoreButton.addEventListener('click', saveToLocalStorage) 
+
 
 highScores.push({
 	initials: ('.initials'),
