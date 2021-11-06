@@ -6,6 +6,8 @@ var resultContainerEl = document.querySelector('.result-container')
 var rwContainerEl = document.getElementById('right-wrong-container')
 var tooltipEl = document.getElementById('tooltip')
 var highScores = [];
+var endGamePage = document.getElementById('high-scores-container')
+var initialsWithScore = document.querySelector('.hs-with-initials')
 
 if (localStorage.getItem('highScores')){
 	highScores = JSON.parse(localStorage.getItem('highScores'));
@@ -28,8 +30,6 @@ var timerIntervalID = null;
 
 function startQuiz() {
 	timerIntervalID = setInterval(populateTime, 1000);
-	// welcomeContainerEl.innerHTML = 'hi';
-	// console.log(welcomeContainerEl)
 	welcomeContainerEl.classList.add('hidden')
 	questionContainerEl.classList.remove("hidden")
 	populateQuestion()
@@ -134,11 +134,42 @@ function checkAnswer(answer) {
 	}, 1000);
 }
 
+function endGame () {
+	resultContainerEl.classList.add('hidden')
+	endGamePage.classList.remove('hidden')
+	initialsWithScore.text = savedInitials;
+	document.getElementById('highscore-button').onclick = function () {
+		location.href = 
+	}
+
+}
+
+
 // local storage
 
+var initialsInput = document.querySelector('.initials');
+var highscoreButton = document.querySelector('.highscore-button')
+var savedInitials = localStorage.getItem('hsinitials')
+
+
+initialsInput.addEventListener('input', letter => {
+	initialsInput.textContent = letter.target.value
+})
+
+var saveToLocalStorage = () => {
+	localStorage.setItem('hsinitials', initialsInput.textContent)
+}
+
+
+
+if(initialsInput) {
+	initialsInput.textContent = savedInitials
+}
+
+highscoreButton.addEventListener('click', saveToLocalStorage)
 
 highScores.push({
-	name: 'bill',
-	score: 4
+	initials: ('.initials'),
+	score: time,
 })
 localStorage.setItem('highScores', JSON.stringify(highScores))
