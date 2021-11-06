@@ -13,7 +13,7 @@ if (localStorage.getItem('highScores')){
 	highScores = JSON.parse(localStorage.getItem('highScores'));
 }
 
-var time = 100;
+var time = 60;
 
 var startBtn = document.getElementById('start-btn')
 
