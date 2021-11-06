@@ -4,6 +4,8 @@
 
 - The quiz is scores based off the timer. User will have a total of 1 minute to complete the quiz. If a question is answered incorrectly, the timer will deduct 10 seconds. 
 
+- The initals and score are saved in localStorage. 
+
 - In the assets folder is an image of how the quiz will look upon starting. 
 ## URLs
 Git Hub: https://github.com/thomps0189/coding-quiz
