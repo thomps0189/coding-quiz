@@ -7,6 +7,9 @@
 - The initals and score are saved in localStorage. 
 
 - In the assets folder is an image of how the quiz will look upon starting. 
+
+# Screenshot
+
 ## URLs
 Git Hub: https://github.com/thomps0189/coding-quiz
 Deployed URL: https://thomps0189.github.io/coding-quiz/

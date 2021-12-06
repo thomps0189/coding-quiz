@@ -143,7 +143,12 @@ var initialsInput = document.querySelector('.initials');
 var highscoreButton = document.getElementById('highscore-button')
 var savedInitials = localStorage.getItem('hsinitials')
 var saveToLocalStorage = () => {
-	localStorage.setItem('hsinitials', initialsInput.textContent)
+	localStorage.setItem('hsinitials', initialsInput.textContent);
+	highScores.push({
+		initials: ('.initials'),
+		score: time,
+	})
+	localStorage.setItem('highScores', JSON.stringify(highScores))
 }
 
 initialsInput.addEventListener('input', letter => {
@@ -161,8 +166,3 @@ if(initialsInput) {
 highscoreButton.addEventListener('click', saveToLocalStorage) 
 
 
-highScores.push({
-	initials: ('.initials'),
-	score: time,
-})
-localStorage.setItem('highScores', JSON.stringify(highScores))
